@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Crisis Platform – Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-M6b8m2qkJc0u8Deq0q7H+o9T2lQCe7f7lE1f8uJbT2w3V1kU9lWcTjI7UeMwk/3KqgJ0m6oE0m5aW7O2K0q+Tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="auth-centered">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span>Campus</span> Crisis</a>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="report.html">Report Issue</a>
+        <a href="map.html">Live Map</a>
+        <a href="forum.html">Community</a>
+        <a href="admin.html">Admin</a>
+        <button class="btn small" id="openAbout">About</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card auth-card single">      
+      <div class="auth-toggle">
+        <button class="link" id="toggleLogin" aria-pressed="true">Login</button>
+        <span class="separator">|</span>
+        <button class="link" id="toggleSignup" aria-pressed="false">Sign Up</button>
+      </div>
+      <h2 id="authTitle">Welcome Back</h2>
+      <p class="muted" id="authSubtitle">Log in to access your dashboard.</p>
+
+      <form id="authForm" class="form">
+        <label id="nameLabel" style="display: none;">Name
+          <input type="text" id="authName" placeholder="Your full name" />
+        </label>
+        <label>Email
+          <input type="email" id="authEmail" placeholder="you@campus.edu" />
+        </label>
+        <label>Password
+          <input type="password" id="authPassword" placeholder="••••••••" />
+        </label>
+        <div class="form-row between" id="forgotRow">
+          <a class="muted" href="#" id="forgotPassword">Forgot password?</a>
+        </div>
+        <button type="submit" id="authSubmit" class="btn primary full">Log In</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Campus Crisis Platform</h4>
+        <p>A localized campus safety and resource coordination portal to keep everyone informed during disruptions.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> help@campuscrisis.local</p>
+        <p><i class="fa-brands fa-x-twitter"></i> @campus_crisis</p>
+      </div>
+    </div>
+    <p class="center muted small">© 2025 Campus Crisis Platform</p>
+  </footer>
+
+  <!-- About Modal -->
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <h3>About the Platform</h3>
+      <p>This platform centralizes campus alerts, reports, and community help during crises such as power or water outages, medical needs, and logistics. It is a demo with simulated data.</p>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

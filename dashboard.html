@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Crisis Platform – Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="dashboard.html" class="logo"><span>Campus</span> Crisis</a>
+      <nav class="nav">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="report.html">Report Issue</a>
+        <a href="map.html">Live Map</a>
+        <a href="forum.html">Community</a>
+        <a href="admin.html">Admin</a>
+        <button class="btn small" id="openAbout">About</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        
+        <h1>Campus Situation Overview</h1>
+        <p class="muted">Live feed of alerts and updates. Color-coded by severity.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="report.html"><i class="fa-solid fa-flag"></i> Report New Issue</a>
+        <a class="btn" href="map.html"><i class="fa-solid fa-map"></i> View Map</a>
+      </div>
+    </section>
+
+    <div class="kpi-grid" id="kpiContainer">
+      <!-- Academic Dashboard KPI Blocks -->
+      <div class="kpi">
+        <div class="num" id="kpiUrgent">0</div>
+        <div class="label">Urgent Alerts</div>
+      </div>
+      <div class="kpi">
+        <div class="num" id="kpiActive">0</div>
+        <div class="label">Active Issues</div>
+      </div>
+      <div class="kpi">
+        <div class="num" id="kpiResolved">0</div>
+        <div class="label">Resolved Today</div>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="section-title">
+        Active Alerts 
+        <span id="refreshIndicator" style="display: none; color: #22c55e; font-size: 14px;">
+          <i class="fa-solid fa-spinner fa-spin"></i> Updating...
+        </span>
+      </h2>
+      <div id="alertsGrid" class="grid cards"></div>
+    </section>
+
+    <section style="margin-top: 3rem;">
+      <h2 class="section-title">Campus Resources</h2>
+      <div id="resourcesPanel"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Campus Crisis Platform</h4>
+        <p>A localized campus safety and resource coordination portal to keep everyone informed during disruptions.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> help@campuscrisis.local</p>
+        <p><i class="fa-brands fa-x-twitter"></i> @campus_crisis</p>
+      </div>
+    </div>
+    <p class="center muted small">© 2025 Campus Crisis Platform</p>
+  </footer>
+
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <h3>About the Platform</h3>
+      <p>This platform centralizes campus alerts, reports, and community help during crises such as power or water outages, medical needs, and logistics. It is a demo with simulated data.</p>
+    </div>
+  </div>
+
+  <!-- Details Modal -->
+  <div id="details-modal" class="hidden" aria-hidden="true">
+    <div class="modal-overlay" id="details-overlay"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="details-title">
+      <button class="modal-close-btn" id="details-close" aria-label="Close">&times;</button>
+      <h2 id="details-title">Alert Title</h2>
+      <p id="details-location" class="muted"></p>
+      <p id="details-status"></p>
+      <p id="details-description"></p>
+    </div>
+  </div>
+
+  
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

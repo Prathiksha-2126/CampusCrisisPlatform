@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Crisis Platform – Community</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="dashboard.html" class="logo"><span>Campus</span> Crisis</a>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="report.html">Report Issue</a>
+        <a href="map.html">Live Map</a>
+        <a href="forum.html" class="active">Community</a>
+        <a href="admin.html">Admin</a>
+        <button class="btn small" id="openAbout">About</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Community Help Forum</h1>
+        <p class="muted">Share updates, ask for help, and coordinate resources.</p>
+      </div>
+    </section>
+
+    <div class="grid two">
+      <section class="card">
+        <h2 class="section-title">New Message</h2>
+        <form id="postForm" class="form">
+          <label>Your Name
+            <input type="text" id="postAuthor" placeholder="e.g., Priya from Hostel B" />
+          </label>
+          <label>Message
+            <textarea id="postText" rows="3" placeholder="Share info or request help..."></textarea>
+          </label>
+          <button type="submit" class="btn primary">Post</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Recent Posts</h2>
+        <div id="postsList" class="posts"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Campus Crisis Platform</h4>
+        <p>A localized campus safety and resource coordination portal to keep everyone informed during disruptions.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> help@campuscrisis.local</p>
+        <p><i class="fa-brands fa-x-twitter"></i> @campus_crisis</p>
+      </div>
+    </div>
+    <p class="center muted small">© 2025 Campus Crisis Platform</p>
+  </footer>
+
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <h3>About the Platform</h3>
+      <p>This platform centralizes campus alerts, reports, and community help during crises such as power or water outages, medical needs, and logistics. It is a demo with simulated data.</p>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/forum.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Crisis Platform – Admin</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="dashboard.html" class="logo"><span>Campus</span> Crisis</a>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="report.html">Report Issue</a>
+        <a href="map.html">Live Map</a>
+        <a href="forum.html">Community</a>
+        <a href="admin.html" class="active">Admin</a>
+        <button class="btn small" id="openAbout">About</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Alerts Management</h1>
+    <p class="muted small">Simulated password protection. You will be prompted.</p>
+
+    <!-- PENDING FORUM POSTS SECTION -->
+    <div class="card" id="pendingPostsSection">
+      <h3>Pending Forum Posts <span id="pendingPostsCount" class="badge yellow">0</span></h3>
+      <p class="muted small">Review and moderate community forum posts before they appear publicly.</p>
+      
+      <div class="table-responsive">
+        <table class="table" id="pendingPostsTable">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Message</th>
+              <th>Submitted At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="center muted">Loading pending posts...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- APPROVED ISSUES SECTION -->
+    <div class="card">
+      <div class="filter-controls">
+        <input type="search" id="filterSearch" placeholder="Search alerts..." />
+        <select id="filterStatus">
+          <option value="">All Statuses</option>
+          <option>Investigating</option>
+          <option>Replenishing</option>
+          <option>Resolved</option>
+          <option>Delayed</option>
+          <option>Maintenance on-site</option>
+          <option>Reported</option>
+        </select>
+      </div>
+      <div class="table-responsive">
+        <table class="table" id="alertsTable">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="admin-section" id="resourcesAdminSection" style="display: none; margin-top: 3rem;">
+      <h2>Resource Inventory</h2>
+      <div class="table-container">
+        <table class="admin-table resources-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Quantity</th>
+              <th>Unit</th>
+              <th>Available</th>
+              <th>Notes</th>
+              <th>Last Updated</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="resourcesAdminTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Campus Crisis Platform</h4>
+        <p>A localized campus safety and resource coordination portal to keep everyone informed during disruptions.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> help@campuscrisis.local</p>
+        <p><i class="fa-brands fa-x-twitter"></i> @campus_crisis</p>
+      </div>
+    </div>
+    <p class="center muted small">© 2025 Campus Crisis Platform</p>
+  </footer>
+
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <h3>About the Platform</h3>
+      <p>This platform centralizes campus alerts, reports, and community help during crises such as power or water outages, medical needs, and logistics. It is a demo with simulated data.</p>
+    </div>
+  </div>
+
+  <script src="assets/js/admin.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

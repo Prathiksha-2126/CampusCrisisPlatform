@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Crisis Platform – Report Issue</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>3 
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="dashboard.html" class="logo"><span>Campus</span> Crisis</a>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="report.html" class="active">Report Issue</a>
+        <a href="map.html">Live Map</a>
+        <a href="forum.html">Community</a>
+        <a href="admin.html">Admin</a>
+        <button class="btn small" id="openAbout">About</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Report a Campus Issue</h1>
+    <div class="two-col-page">
+      <section class="col-main">
+        <form id="reportForm" class="form card">
+          <div class="grid two">
+            <label>Category
+              <select id="issueCategory">
+                <option value="power">Power</option>
+                <option value="water">Water</option>
+                <option value="medical">Medical</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+            <label>Location
+              <input type="text" id="issueLocation" placeholder="e.g., Hostel A, Canteen, Library" />
+            </label>
+          </div>
+          <label>Description
+            <textarea id="issueDescription" rows="4" placeholder="Describe the issue..."></textarea>
+          </label>
+          <div class="grid two">
+            <label>Contact Info
+              <input type="text" id="issueContact" placeholder="Your name / email" />
+            </label>
+            <label>Upload Image (simulated)
+              <input type="file" id="issueImage" accept="image/*" />
+            </label>
+          </div>
+          <button type="submit" class="btn primary">Submit Issue</button>
+        </form>
+      </section>
+      <aside class="col-aside">
+        <div class="card tips">
+          <h3>Tips for Accurate Reports</h3>
+          <ul>
+            <li>Provide precise locations (e.g., "Hostel A, 2nd Floor").</li>
+            <li>Attach a clear photo if possible (simulated upload).</li>
+            <li>Include contact info to help responders reach you.</li>
+            <li>Choose the best matching category.</li>
+          </ul>
+          <h4>Emergency Contacts</h4>
+          <p class="muted small">Campus Security: 1001</p>
+          <p class="muted small">Clinic: 1002</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Campus Crisis Platform</h4>
+        <p>A localized campus safety and resource coordination portal to keep everyone informed during disruptions.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> help@campuscrisis.local</p>
+        <p><i class="fa-brands fa-x-twitter"></i> @campus_crisis</p>
+      </div>
+    </div>
+    <p class="center muted small">© 2025 Campus Crisis Platform</p>
+  </footer>
+
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <h3>About the Platform</h3>
+      <p>This platform centralizes campus alerts, reports, and community help during crises such as power or water outages, medical needs, and logistics. It is a demo with simulated data.</p>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // 🔒 LOGIN CHECK: Verify user is logged in before allowing form access
+    async function checkLoginStatus() {
+      try {
+        const response = await fetch('api/me.php');
+        const data = await response.json();
+        
+        if (!data.logged_in) {
+          // User not logged in - redirect to login with message
+          localStorage.setItem('loginMessage', 'Please log in to report an issue.');
+          window.location.href = 'index.html';
+          return false;
+        }
+        
+        // User is logged in - enable form
+        console.log('User authenticated:', data.user.name);
+        return true;
+        
+      } catch (error) {
+        console.error('Login check failed:', error);
+        localStorage.setItem('loginMessage', 'Please log in to report an issue.');
+        window.location.href = 'index.html';
+        return false;
+      }
+    }
+
+    // Check login status when page loads
+    document.addEventListener('DOMContentLoaded', async () => {
+      const isLoggedIn = await checkLoginStatus();
+      
+      if (isLoggedIn) {
+        // Enable form functionality
+        console.log('🚀 Report form ready');
+      }
+    });
+  </script>
+</body>
+</html>
