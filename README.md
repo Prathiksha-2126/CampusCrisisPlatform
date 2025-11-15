@@ -311,13 +311,6 @@ This project is created for educational purposes. Feel free to use and modify as
 
 ---
 
-## Contact & Support
-
-- **Email**: help@campuscrisis.local
-- **Twitter**: @campus_crisis
-
----
-
 ## Acknowledgments
 
 - Built with vanilla JavaScript (no frameworks)
