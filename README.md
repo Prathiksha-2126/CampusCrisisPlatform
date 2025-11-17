@@ -4,11 +4,7 @@ A comprehensive web-based emergency management system designed for campus-wide c
 
 ---
 
-<<<<<<< HEAD
-##  Features
-=======
 ## Features
->>>>>>> 159cd5fb26303ba029fe2d44cdef63b737771c88
 
 ### For Students & Staff
 -  **User Authentication** - Secure login and registration system
@@ -26,12 +22,7 @@ A comprehensive web-based emergency management system designed for campus-wide c
 -  **KPI Dashboard** - Monitor urgent alerts, active issues, and resolved cases
 
 ---
-
-<<<<<<< HEAD
-##  Tech Stack
-=======
 ## Tech Stack
->>>>>>> 159cd5fb26303ba029fe2d44cdef63b737771c88
 
 ### Frontend
 - **HTML5** - Semantic markup
@@ -49,11 +40,7 @@ A comprehensive web-based emergency management system designed for campus-wide c
 
 ---
 
-<<<<<<< HEAD
-##  Prerequisites
-=======
 ## Prerequisites
->>>>>>> 159cd5fb26303ba029fe2d44cdef63b737771c88
 
 Before you begin, ensure you have the following installed:
 
@@ -118,8 +105,6 @@ Open your web browser and navigate to:
 ```
 http://localhost/CampusCrisisPlatform/
 ```
-
----
 
 ## Project Structure
 
